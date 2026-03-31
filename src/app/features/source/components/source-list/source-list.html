@@ -1,0 +1,88 @@
+<!-- <h2>Sources List</h2>
+
+<ul>
+  @for (source of sources; track source.id) {
+    <li>
+      <h3>{{ source.name }}</h3>
+      <p>{{ source.url }}</p>
+
+      <strong>Tagged Companies:</strong>
+
+      <ul>
+        @for (company of source.tagged_companies_data; track company.id) {
+          <li>{{ company.name }}</li>
+        }
+      </ul>
+    </li>
+  }
+</ul> -->
+
+
+<!-- <h2 class="title">Sources List</h2>
+
+<ul class="source-list">
+  @for (source of sources; track source.id) {
+    <li class="source-card">
+
+      <h3 class="source-name">{{ source.name }}</h3>
+
+      <a [href]="source.url" target="_blank" class="source-link">
+        {{ source.url }}
+      </a>
+
+      <div class="company-section">
+        <strong>Tagged Companies:</strong>
+
+        <ul class="company-list">
+          @for (company of (source.tagged_companies_data); track company.id) {
+            <li class="company-badge">
+              {{ company.name }}
+            </li>
+          }
+        </ul>
+      </div>
+
+    </li>
+  }
+</ul> -->
+
+
+<div class="container">
+  <div class="header">
+    <h2>All Sources</h2>
+
+    <div class="actions">
+      <button class="btn green" (click)="showForm = true">
+        + Add Source
+      </button>
+    </div>
+  </div>
+
+  <!-- List -->
+  @for (source of sources; track source.id) {
+    <div class="card">
+      <h3>{{ source.name }}</h3>
+      <p>{{ source.url }}</p>
+
+      <div class="tags">
+        @for (company of source.tagged_companies_data; track company.id) {
+          <span class="tag">{{ company.name }}</span>
+        }
+      </div>
+    </div>
+  }
+
+  <!-- Empty -->
+  @if (sources.length === 0) {
+    <p>No sources found ❌</p>
+  }
+
+  <!-- FORM MODAL -->
+  @if (showForm) {
+    <app-source-form
+      (saved)="onSourceAdded()"
+      (close)="showForm = false">
+    </app-source-form>
+  }
+</div>
+ 

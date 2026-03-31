@@ -1,0 +1,30 @@
+
+<div class="auth-container">
+
+  <h2>Signup</h2>
+
+  <input [(ngModel)]="signupData.username" placeholder="Username" name="username" />
+
+  <input [(ngModel)]="signupData.first_name" placeholder="First Name" name="first_name" />
+
+  <input [(ngModel)]="signupData.last_name" placeholder="Last Name" name="last_name" />
+
+  <input [(ngModel)]="signupData.email" placeholder="Email" name="email" />
+
+  <input [(ngModel)]="signupData.password" type="password" placeholder="Password" name="password" />
+
+  <input [(ngModel)]="signupData.confirm_password" type="password" placeholder="Confirm Password" name="confirm_password" />
+
+ 
+  <select [(ngModel)]="signupData.company" name="company">
+    <option value="">Select Company</option>
+    @for (company of companies; track company.id) {
+      <option [value]="company.id">
+        {{ company.name }}
+      </option>
+    }
+  </select>
+
+  <button (click)="signup()" class="btn blue">Signup</button>
+
+</div>

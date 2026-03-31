@@ -1,0 +1,80 @@
+/* Full page center */
+.auth-container {
+  width: 100%;
+  max-width: 420px;          /* increased */
+  margin: 100px auto;        /* more spacing from top */
+  padding: 40px 35px;        /* bigger padding */
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Heading */
+.auth-container h2 {
+  margin-bottom: 25px;
+  color: #333;
+  font-weight: 600;
+  font-size: 24px;           /* bigger text */
+}
+
+/* Inputs */
+.auth-container input {
+  width: 100%;
+  padding: 12px 14px;        /* bigger input */
+  margin-bottom: 18px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;           /* slightly larger text */
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Input focus */
+.auth-container input:focus {
+  border-color: #0d6efd;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+
+/* Button */
+.btn.green {
+  width: 100%;
+  padding: 12px;
+  background-color: #198754;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+/* Button hover */
+.btn.green:hover {
+  background-color: #157347;
+  transform: translateY(-2px);
+}
+
+/* Button click */
+.btn.green:active {
+  transform: scale(0.97);
+}
+
+/* Signup text */
+.auth-container p {
+  margin-top: 18px;
+  font-size: 15px;
+  color: #555;
+}
+
+/* Link */
+.auth-container a {
+  color: #0d6efd;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-container a:hover {
+  text-decoration: underline;
+}
